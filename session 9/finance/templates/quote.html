@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Quote{% endblock %}
+
+{% block main %}
+    <h2 class="text-center mb-4">Quote a Stock</h2>
+
+    <!-- Form for entering the stock symbol -->
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <label for="symbol" class="form-label">Stock Symbol</label>
+            <input id="symbol" class="form-control mx-auto w-auto" name="symbol" placeholder="Enter stock symbol (e.g., AAPL)" type="text" autofocus required>
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Get Quote</button>
+    </form>
+
+    {% if error %}
+        <div class="alert alert-danger mt-3">
+            {{ error }}
+        </div>
+    {% endif %}
+{% endblock %}

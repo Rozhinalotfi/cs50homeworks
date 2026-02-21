@@ -1,0 +1,29 @@
+from cs50 import get_string
+
+text = get_string("enter your text: ")
+
+letters = sum(1 for char in text if char.isalpha())
+
+words = len([word for word in text.split() if word])
+
+sentences = 0
+for i in range(len(text)):
+    if text[i] in ['.', '!', '?']:
+        if i > 0 and text[i - 1].isalpha():
+            sentences += 1
+
+if words == 0 or sentences == 0 or letters == 0:
+    print("Before Grade 1")
+else:
+
+    L = (letters / words) * 100
+    S = (sentences / words) * 100
+    index = 0.0588 * L - 0.296 * S - 15.8
+
+
+    if index < 1:
+        print("Before Grade 1")
+    elif index >= 16:
+        print("Grade 16+")
+    else:
+        print(f"Grade {round(index)}")

@@ -1,0 +1,3 @@
+import cs50
+name = cs50.get_string("what is yor name?")
+print(f"hello {name}")

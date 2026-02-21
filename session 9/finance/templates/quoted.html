@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}Quoted{% endblock %}
+
+{% block main %}
+    <h2 class="text-center mb-4">Stock Quote</h2>
+
+    <div class="mt-4 card">
+        <div class="card-body">
+            <h4 class="card-title">{{ quote["name"] }} ({{ quote["symbol"] }})</h4>
+            <p class="card-text">Current Price: <strong>${{ price }}</strong></p>
+            <p class="text-muted">Last Updated: {{ quote["timestamp"] }}</p>
+        </div>
+    </div>
+{% endblock %}

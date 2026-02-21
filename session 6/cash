@@ -1,0 +1,16 @@
+from cs50 import get_float
+
+while True:
+    cash = get_float("enter the price: ")
+    if cash > 0:
+        break
+
+cents = round(cash * 100)
+coins = [25, 10, 5, 1]
+count = 0
+for coin in coins:
+    used = cents // coin
+    count += used
+    cents -= used * coin
+print(count)
+

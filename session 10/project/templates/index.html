@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Library</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>My Library</h1>
+
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="Book Title" required>
+        <input type="text" name="author" placeholder="Author Name" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <h2>Books List</h2>
+    <ul>
+        {% for title, author in books.items() %}
+        <li>
+            '{{ title }}' by {{ author }}
+            <a href="/remove/{{ title }}">Remove</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

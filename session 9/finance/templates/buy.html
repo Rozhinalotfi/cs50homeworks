@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}خرید{% endblock %}
+
+{% block main %}
+<h2>خرید سهام</h2>
+<form action="/buy" method="post">
+    <div class="mb-3">
+        <label for="symbol" class="form-label">نماد سهام</label>
+        <input id="symbol" class="form-control mx-auto w-auto" name="symbol" placeholder="نماد سهام" type="text" autofocus required>
+    </div>
+    <div class="mb-3">
+        <label for="shares" class="form-label">تعداد سهام</label>
+        <input id="shares" class="form-control mx-auto w-auto" name="shares" placeholder="تعداد سهام" type="number" min="1" required>
+    </div>
+    <button class="btn btn-primary" type="submit">خرید</button>
+</form>
+{% endblock %}

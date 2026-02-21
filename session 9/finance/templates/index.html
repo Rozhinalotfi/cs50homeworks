@@ -1,0 +1,12 @@
+{% extends "layout.html" %}{% block title %}Portfolio{% endblock %}{% block main %}
+<table class="table table-striped">
+    <thead><tr><th>Symbol</th><th>Name</th><th>Shares</th><th>Price</th><th>TOTAL</th></tr></thead>
+    <tbody>
+        {% for s in portfolio %}
+        <tr><td>{{ s.symbol }}</td><td>{{ s.name }}</td><td>{{ s.shares }}</td><td>{{ s.price }}</td><td>{{ s.total }}</td></tr>
+        {% endfor %}
+        <tr><td colspan="4"><strong>Cash</strong></td><td><strong>{{ cash }}</strong></td></tr>
+    </tbody>
+    <tfoot><tr><td colspan="4"><strong>Grand Total</strong></td><td><strong>{{ grand_total }}</strong></td></tr></tfoot>
+</table>
+{% endblock %}
